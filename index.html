@@ -1,146 +1,315 @@
 <!DOCTYPE html>
 
+
 <html>
 
-	<head>
-		<title>Introduction to Web Development</title>
-		<meta charset="UTF-8">
-	
-		<style>
-		
-		/* This is example for Universal 'Selector', applies everywhere */
-		
-		* {
-			font-family : "Comic Strip", Verdana !important;
-			}
+<head>
+<title>Introduction to Web Development</title>
+<meta charset="UTF-8">
 
-		/* These are Tag selectors, apply to all tags below */
-		
-		ul {
-			List-style-image : url("https://mdn.mozillademos.org/files/11981/starsolid.gif");
-			}
-			
-		ol {
-			List-style-type : upper-roman;
-			}
+<style>
 
-		body { 
-			color : #696969;
-			line-height : 140%;
-			}
-		
-		/* check this one, try to change display to 'block' */
-		
-		h1, h2 {
-			display : inline;
-			Background : #FFCC33;
-			}
+/* This is example for Universal 'Selector', applies everywhere */
 
-		/* Check float with left and try to remove, see how the page changes */
-		
-		img, iframe {
-			float : right;
-			}
-	
-		/* This is example for ID Selector, rather use class, but you will meet this frequently. */
+* {
+font-family : "Comic Strip", Verdana !important;
+}
 
-		/* Try out auto and visible overflow options. See how these options make the page different */
-		
-		#Introduction {
-			 padding : 5px;
-			 margin : 10px;
-			 height : 200px;
-			 width : 400px;
-			 overflow : scroll;
-			}
-		
-		/* This is where I format the links, how should it look like, what happens when it is already visited and what happens when you hoover. I stole something from CSS Zen Garden. */
-		
-		a:link { 
-			font-weight: bold; 
-			text-decoration: none; 
-			color: #B7A5DF;
-			}
-		
-		a:visited { 
-			font-weight: bold; 
-			text-decoration: none; 
-			color: #D4CDDC;
-			}
-		
-		a:hover, a:focus, a:active { 
-			text-decoration: underline; 
-			color: #9685BA;
-		}
-		
-		/*links looked super ugly without a margin so I included that. I also put in a frame to make it ugly. Let's apply this based on class. */
-		
-		.mylinks {
-			border : groove 2px #FFCC33 ;
-			border-width : 10px 10px 10px 10px;
-			margin : 30px;
-			padding : 10px;
-			font-style : italic;
-			text-decoration : blink;
-			text-align : center;
-			}
-		
-		.h2class {
-			padding-bottom : 20px;
-			overflow : visible;
-			}
-		
-		</style>
-	
+/* These are Tag selectors, apply to all tags below */
+
+ul {
+List-style-image : url("https://mdn.mozillademos.org/files/11981/starsolid.gif");
+}
+
+ol {
+List-style-type : upper-roman;
+}
+
+body {
+color : #696969;
+line-height : 140%;
+}
+
+/* check this one, try to change display to 'block' */
+
+h1, h2 {
+display : inline;
+Background : #FFCC33;
+}
+
+/* Check float with left and try to remove, see how the page changes */
+
+img, iframe {
+float : right;
+}
+
+/* This is example for ID Selector, rather use class, but you will meet this frequently. */
+
+/* Try out auto and visible overflow options. See how these options make the page different */
+
+#Introduction {
+padding : 5px;
+margin : 10px;
+height : 200px;
+width : 400px;
+overflow : scroll;
+}
+
+/* This is where I format the links, how should it look like, what happens when it is already visited and what happens when you hoover. I stole something from CSS Zen Garden. */
+
+a:link {
+font-weight: bold;
+text-decoration: none;
+color: #B7A5DF;
+}
+
+a:visited {
+font-weight: bold;
+text-decoration: none;
+color: #D4CDDC;
+}
+
+a:hover, a:focus, a:active {
+text-decoration: underline;
+color: #9685BA;
+}
+
+/*links looked super ugly without a margin so I included that. I also put in a frame to make it ugly. Let's apply this based on class. */
+
+.mylinks {
+border : groove 2px #FFCC33 ;
+border-width : 10px 10px 10px 10px;
+margin : 30px;
+padding : 10px;
+font-style : italic;
+text-decoration : blink;
+text-align : center;
+}
+
+.h2class {
+padding-bottom : 20px;
+overflow : visible;
+}
+
+.closed {
+	display : none;
+}
+
+.open {
+	display : block;
+}
+
+
+</style>
+
     </head>
-	
-	<body>
-		
+
+<!this update in the body tag is needed to the favourite music part on the bottom>
+
+<body onload="addmusic()">
+
+<! this will add a simple popup>
+
+<script>
+	alert("Welcome to my page!!");
+</script>
+
+<! this will ask for your name and build it in to the code. This is the verison with condition ('if'). Try to modify it, add your name, add different text!>
+
+<script>
+
+var name = prompt("What is your name?")
+
+if (name.length != 0){
+    if (name == "miki")
+      document.write("<h1> Hello miki! You are so cool!</h1><br/><br/>");
+    else
+      document.write("<h1>Hello " +  name + "</h1><br/><br/>");
+    
+}
+else
+   document.write("<h1>Hello, do not be shy!</h1><br/>");
+
+</script>
+
+<!this one will count the div tags in the page. I added this both to the top and the bottom, look how it gives different values (counts only what happened before the code)>
+
+<script>
+	var divs = document.getElementsByTagName("div");
+	document.write("<p>Number of divs in the page is "+ divs.length + "!</h1></p>");
+</script>
+
+<!this is how a function works. We add a script and we can call it multiple times. Take a look that I added the button below all my sections and use the same script to show the popup>
+
+<script>
+	function tryit()
+	{
+		alert("Thank you!")
+	}
+</script>
+
+<form>
+<p><input type="button" value="Click and try how the button works!" onclick="tryit()"></p>
+</form>
+
+<!we will use this one to change the picture on hover. You will also need to update the code for your picture!!>
+
+<script>
+
+	function changepicture(element){
+	  document.getElementById('miki').src = "https://image-cdn.neatoshop.com/styleimg/86554/none/black/default/416448-20;1556517689t.jpg";
+	}
+
+	function changepictureback(element){
+	  document.getElementById('miki').src = "http://webdev-olive-2020.github.io/sample.jpg";
+	}
+
+</script>
+
+<!This is the code which changes stlye. We will show / hide the content of a section, but you can change any style here, colors, background and so on. Try to add a style change to your page! You will need to add the classes (you can see this on the bottom of my head section), the script, the buttons and you will need to update the section you want to hide, add the Id and the class>
+
+<script>
+
+function openMe(){
+   		x=document.getElementById("Introduction");
+   		x.className="open";
+	}
+
+function closeMe(){
+   		x=document.getElementById("Introduction");
+   		x.className="closed";
+	}
+
+</script>
+
+
+<p><button type="button" onclick="openMe()">Click if you want to see my introduction!</button><button type="button" onclick="closeMe()">Click if you want to hide my introduction!</button></p>
+
         <h1>My first website</h1>
-        <div id = "Introduction">
-        	<h2 class = "h2class">Introduction</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br/>
-				Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/>
-				Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  <br/>
-				Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/>
-        	</p>
-		</div>
+        <div id = "Introduction" class="closed">
+        <h2 class = "h2class">Introduction</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br/>
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br/>
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  <br/>
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/>
+        </p>
+
+<form>
+<p><input type="button" value="Click here if you like this!" onclick="tryit()"></p>
+</form>
+</div>
         <div>
-        	<h2 class = "h2class">Why I chose this class</h2>
-			<ol>
-				<li>Curabitur pretium tincidunt lacus. </li>
-				<li>Nulla gravida orci a odio. </li>
-				<li>Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. </li>
-				<li>Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. </li>
-			</ol>
+        <h2 class = "h2class">Why I chose this class</h2>
+<ol>
+<li>Curabitur pretium tincidunt lacus. </li>
+<li>Nulla gravida orci a odio. </li>
+<li>Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. </li>
+<li>Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. </li>
+</ol>
         </div>
         <div class="mylinks" >
-		
-			<a href ="https://openeducation.group/open-seminars/">I include this to show you how the link shows as a text.</a>
-		
-		</div>
-		
-        <div>
-	        <h2>Previous experience in the topic</h2>
-			<ul>
-				<li>Donec lobortis risus a elit. </li>
-				<li>Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. </li>
-				<li>Maecenas fermentum consequat mi. </li>
-				<li>Donec fermentum. </li>
-				<li>Pellentesque malesuada nulla a mi.</li>
-				<li>Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque.</li>
-				<li>I checked the code of a few website</li>
-	        </ul>
-		</div>
-        
-        <h2 class = "h2class">My image and favourite music</h2>                
-        <img src="http://webdev-olive-2020.github.io/sample.jpg" alt="This is a picture of me" title="Miki"/>
-		<iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-		</iframe>
-        <a target="_blank" href="https://openeducation.group/open-seminars/">
-			<img src = "https://openeducationgroup.files.wordpress.com/2020/01/copy-of-olivelogo_extended.png?w=1024&h=498" width="20%" alt="OLIve Logo" title="Click to go to the OLIve website"/>
-		</a>
 
-	</body>
+<a href ="https://openeducation.group/open-seminars/">I include this to show you how the link shows as a text.</a>
+<form>
+<p><input type="button" value="Click here if you like this!" onclick="tryit()"></p>
+</form>
+
+</div>
+
+        <div>
+       <h2>Previous experience in the topic</h2>
+<ul>
+<li>Donec lobortis risus a elit. </li>
+<li>Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. </li>
+<li>Maecenas fermentum consequat mi. </li>
+<li>Donec fermentum. </li>
+<li>Pellentesque malesuada nulla a mi.</li>
+<li>Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque.</li>
+<li>I checked the code of a few website</li>
+
+</ul>
+<form>
+<p><input type="button" value="Click here if you like this!" onclick="tryit()"></p>
+</form>
+</div>
+<div> 
+        <h2 class = "h2class">My image and favourite music</h2>                
+<p><button onclick="musicprompt()">Add Your Favorite!</button></p>
+  <p id="bestmusic"></p>
+  
+<script>
+var bestmusic = ["Bob Marley", "Alton Ellis", "Ken Boothe", "Errol Dunkley"];
+
+function addmusic(){
+   document.getElementById("bestmusic").innerHTML = bestmusic;
+}
+
+function musicprompt() {
+  var music = prompt("What is your favorite music? ");
+  bestmusic[bestmusic.length] = music;
+  document.getElementById("bestmusic").innerHTML = bestmusic;
+}
+</script>
+        <img id = "miki" src="http://webdev-olive-2020.github.io/sample.jpg" alt="This is a picture of me" title="Miki" onmouseover = "changepicture(this)" onmouseout = "changepictureback(this)"/>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe>
+        <a target="_blank" href="https://openeducation.group/open-seminars/">
+<img src = "https://openeducationgroup.files.wordpress.com/2020/01/copy-of-olivelogo_extended.png?w=1024&h=498" width="20%" alt="OLIve Logo" title="Click to go to the OLIve website"/>
+</a>
+<form>
+<p><input type="button" value="Click here if you like this!" onclick="tryit()"></p>
+</form>
+</div>
+
+<!this is how a form would work, if we would have a backend. This has no functionality now as we cannot store the data anywhere.>
+
+<div>
+	<h1>Tell me something about yourself!</h1>
+    <form>
+		  <fieldset>
+			    <legend>Input Types</legend>
+      	<label>Name: <input type='text' id = 'name' name = 'name'></label>
+    		
+        <label>Email: <input type='email' name = 'email'> </label>
+
+         <label>Password: <input type='password' name = 'pass'></label>
+        
+        Radio Buttons<br/>
+        <label><input type="radio" name="sex" value="male" checked>Male</label>
+
+        <label><input type="radio" name="sex" value="female">Female</label>
+
+        Checkboxes<br/>
+
+        <label> <input type="checkbox" name="contact1" value="Bike">Contact me via email</label>
+
+        <label> <input type="checkbox" name="contact2" value="Bike">Contact me via phone</label>
+  </fieldset>
+</form> 
+</div>
+
+<!here is a loop, try to update the grades and see what happens!>
+
+<div>
+<script>
+var grades= [1,2,3,4,5,6];
+
+var sum = 0;
+if (grades.length > 0){
+  for (index = 0; index < grades.length; index++){
+		sum += grades[index];
+  }
+  
+  document.write("<p>The average of your number is: " + sum/grades.length + "!");
+}
+else
+  document.write("<p>There are no grades</p>");
+</script>
+
+<script>
+	var divs = document.getElementsByTagName("div");
+	document.write("<p>Number of divs in the page is "+ divs.length + "!</p>");
+    </script>
+</body>
 
 </html>
